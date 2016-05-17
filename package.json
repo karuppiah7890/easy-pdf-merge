@@ -1,0 +1,31 @@
+{
+  "name": "easy-pdf-merge",
+  "version": "0.1.0",
+  "description": "A node module to merge PDFs. Uses Apache PDFBox library.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karuppiah7890/easy-pdf-merge.git"
+  },
+  "keywords": [
+    "pdf",
+    "merge",
+    "easy",
+    "pdf-merge",
+    "merge-pdf",
+    "easy-pdf-merge",
+    "easy-merge-pdf"
+  ],
+  "author": "Karuppiah <karuppiah7890@gmail.com> (https://www.github.com/karuppiah7890)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/karuppiah7890/easy-pdf-merge/issues"
+  },
+  "homepage": "https://github.com/karuppiah7890/easy-pdf-merge#readme"
+}
