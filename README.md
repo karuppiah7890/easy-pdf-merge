@@ -44,4 +44,4 @@ merge(['File One.pdf','File Two.pdf'],'File Ouput.pdf',function(err){
 
 ## Reporting Issues and Feature Requests
 
-For reporting issues and for feature requests, go to the [github page of the module](https://github.com/karuppiah7890/easy-pdf-merge)
+For reporting issues and for feature requests, go to the [github issues page of the module](https://github.com/karuppiah7890/easy-pdf-merge/issues)
