@@ -25,7 +25,8 @@
   "author": "Karuppiah <karuppiah7890@gmail.com> (https://www.github.com/karuppiah7890)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/karuppiah7890/easy-pdf-merge/issues"
+    "url": "https://github.com/karuppiah7890/easy-pdf-merge/issues",
+    "email" : "karuppiah7890@gmail.com"
   },
   "homepage": "https://github.com/karuppiah7890/easy-pdf-merge#readme"
 }
