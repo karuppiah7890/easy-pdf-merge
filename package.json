@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "A node module to merge PDFs. Uses Apache PDFBox library.",
   "main": "index.js",
-  "directories": {
-    "test": "test"
+  "engines": {
+    "node": ">=0.10.0"
   },
   "scripts": {
     "test": "node test.js"
