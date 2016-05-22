@@ -2,7 +2,7 @@
 
 easy-pdf-merge is a node module to merge multiple PDFs into a single PDF easily. This module uses [Apache PDFBox Library 2.0.1](http://pdfbox.apache.org). No special softwares are required for the module to run. But Java 6 or higher must be present.
 
-Currently only callback style is supported.
+Currently only callback style is supported. That is only Async functions are supported.
 
 ## Usage :
 
@@ -20,13 +20,14 @@ merge(source_files,dest_file_path,function(err){
 
 ```
 
-source_files must be an array, with two or more files, or the module throws an error accordingly.
-dest_file path is the destination for the merged PDF.
+source_files must be an array of file paths, with two or more file paths, or the module throws an error accordingly.
+dest_file path is the destination path for the merged PDF to be saved.
 
-For all files, it is recommended to give absolute paths to avoide problems. Or, give paths relative to `process.cwd();` , which is the current working directory of the process.
+For all files, it is recommended to give absolute paths to avoid possible path based problems in your code. Or, give paths relative to `process.cwd();` , which is the current working directory of the process. But be careful when giving relative paths, to avoid bugs.
 
 ## Example
 
+### Using relative file paths
 ```
 merge(['File One.pdf','File Two.pdf'],'File Ouput.pdf',function(err){
 
@@ -37,6 +38,22 @@ merge(['File One.pdf','File Two.pdf'],'File Ouput.pdf',function(err){
 
 });
 ```
+
+### Using absolute file paths
+```
+merge(['/home/karuppiah/File One.pdf','/home/karuppiah/File Two.pdf'],'/home/karuppiah/Desktop/File Ouput.pdf',function(err){
+
+        if(err)
+        return console.log(err);
+
+        console.log('Successfully merged!');
+
+});
+```
+
+## An App based on easy-pdf-merge!
+
+[PDF Merger](https://github.com/karuppiah7890/pdf-merger-app) is a cross platform Desktop App being developed using [Electron Framework](http://electron.atom.io) and [easy-pdf-merge module](https://www.npmjs.com/package/easy-pdf-merge). You can find the source code of the App [here](https://github.com/karuppiah7890/pdf-merger-app).
 
 ## Coming Soon :
   1. Module will check if source files exist and return appropriate error.
