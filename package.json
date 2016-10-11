@@ -9,6 +9,9 @@
   "scripts": {
     "test": "node test.js"
   },
+  "bin": {
+    "merge": "cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/karuppiah7890/easy-pdf-merge.git"
@@ -26,7 +29,10 @@
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/karuppiah7890/easy-pdf-merge/issues",
-    "email" : "karuppiah7890@gmail.com"
+    "email": "karuppiah7890@gmail.com"
   },
-  "homepage": "https://github.com/karuppiah7890/easy-pdf-merge#readme"
+  "homepage": "https://github.com/karuppiah7890/easy-pdf-merge#readme",
+  "dependencies": {
+    "meow": "^3.7.0"
+  }
 }
