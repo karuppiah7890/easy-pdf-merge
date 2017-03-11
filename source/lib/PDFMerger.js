@@ -47,6 +47,7 @@ module.exports = function(src,dest,callback){
       var dirPathArr = __dirname.split(path.sep);
 
       dirPathArr.pop();
+      dirPathArr.pop();
       dirPathArr.push('jar');
       dirPathArr.push('pdfbox.jar');
 
