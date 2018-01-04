@@ -65,9 +65,7 @@ merge(['/home/karuppiah/File One.pdf','/home/karuppiah/File Two.pdf'],'/home/kar
 
 For reporting issues and for feature requests, go to the [github issues page of the module](https://github.com/karuppiah7890/easy-pdf-merge/issues)
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/As7RZLNBAMSNCAFdWx5r75nM/karuppiah7890/easy-pdf-merge'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/As7RZLNBAMSNCAFdWx5r75nM/karuppiah7890/easy-pdf-merge.svg' />
-</a>
+
 
 ## License - Apache License 2.0
 ```
