@@ -45,7 +45,8 @@ function checkSrc(src,callback){
 module.exports = function(src, dest, opts, callback){
 
       var defaultOpts = {
-        maxBuffer: 1024 * 500 // 500kb
+        maxBuffer: 1024 * 500, // 500kb
+        maxHeap: '' // for setting JVM heap limits
       };
 
       // this will help to fix the old code using the function without opts
@@ -68,7 +69,7 @@ module.exports = function(src, dest, opts, callback){
 
       var jarPath = dirPathArr.join(path.sep);
 
-      var command = [`java -jar "${jarPath}" PDFMerger`];
+      var command = [`java -jar ${opts.maxHeap ? "-Xmx " + opts.maxHeap : "" } "${jarPath}" PDFMerger`];
 
       checkSrc(src,function(err,norm_src){
 
@@ -79,6 +80,8 @@ module.exports = function(src, dest, opts, callback){
 
           command.push(`"${dest}"`);
 
+          delete opts.maxHeap;
+            
           var child = exec(command.join(' '), opts, function(err,stdout,stderr){
 
               if(err)
