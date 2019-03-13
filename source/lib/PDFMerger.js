@@ -69,7 +69,7 @@ module.exports = function(src, dest, opts, callback){
 
       var jarPath = dirPathArr.join(path.sep);
 
-      var command = [`java -jar ${opts.maxHeap ? "-Xmx " + opts.maxHeap : "" } "${jarPath}" PDFMerger`];
+      var command = [`java -jar ${opts.maxHeap ? "-Xmx" + opts.maxHeap : "" } "${jarPath}" PDFMerger`];
 
       checkSrc(src,function(err,norm_src){
 
