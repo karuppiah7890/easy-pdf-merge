@@ -6,9 +6,14 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ]
+  },
   "scripts": {
     "test": "node test.js",
-    "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
+    "build": "npx babel source --out-dir distribution",
     "prepublish": "npm run build"
   },
   "bin": {
@@ -35,8 +40,9 @@
   },
   "homepage": "https://github.com/karuppiah7890/easy-pdf-merge#readme",
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
   },
   "dependencies": {
     "meow": "^3.7.0"
