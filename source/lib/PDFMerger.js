@@ -15,22 +15,7 @@ function checkSrc(src,callback){
       for(var i=0;i<src.length;i++){
 
         if(typeof(src[i])==='string') {
-
-            /*
-            //Check if source file exists
-
-            fs.stat(src[i],function(err,stats){
-
-              if(err)
-                return callback('Can\'t access file : ' + src[i]);
-
-              if(!stats.isFile())
-                return callback(src[i] + ' is not a File');
-
-            });*/
-
             norm_src.push(`"${src[i]}"`);
-
         }
 
         else
