@@ -16,9 +16,6 @@
     "build": "npx babel source --out-dir distribution",
     "prepublish": "npm run build"
   },
-  "bin": {
-    "merge": "cli.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/karuppiah7890/easy-pdf-merge.git"
@@ -44,7 +41,5 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5"
   },
-  "dependencies": {
-    "meow": "^3.7.0"
-  }
+  "dependencies": {}
 }
