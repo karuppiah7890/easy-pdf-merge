@@ -9,8 +9,7 @@ Currently only callback style is supported. That is only Async functions are sup
 ## Install :
 
 ```
-$ npm install easy-pdf-merge --global
-
+$ npm install --save easy-pdf-merge
 ```
 
 ## Usage :
@@ -33,25 +32,6 @@ source_files must be an array of file paths, with two or more file paths, or the
 dest_file path is the destination path for the merged PDF to be saved.
 
 For all files, it is recommended to give absolute paths to avoid possible path based problems in your code. Or, give paths relative to `process.cwd();` , which is the current working directory of the process. But be careful when giving relative paths, to avoid bugs.
-
-### CLI :
-
-```
-$ merge --help
-
-  Usage
-    $ merge [file ...]
-    
-  Options
-    -d Give destination file name.
-    
-  Examples
-    $ merge File1.pdf File2.pdf
-    $ merge File1.pdf File2.pdf -d DestFile.pdf
-    $ merge /home/beatfreaker/File1.pdf /home/beatfreaker/File2.pdf -d /home/beatfreaker/DestFile.pdf
-
-```
-*Note: Please make sure that Java 6 or above is installed in your system and java command is working properly in command prompt*
 
 ## Example
 
