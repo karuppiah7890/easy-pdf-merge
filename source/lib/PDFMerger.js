@@ -1,5 +1,5 @@
-var exec = require('child_process').exec;
-var path = require('path');
+const exec = require('child_process').exec;
+const path = require('path');
 
 function checkSrc(src, callback) {
   if (!Array.isArray(src)) {
@@ -8,9 +8,9 @@ function checkSrc(src, callback) {
     return callback('There must be atleast 2 input files');
   }
 
-  var norm_src = [];
+  const norm_src = [];
 
-  for (var i = 0; i < src.length; i++) {
+  for (let i = 0; i < src.length; i++) {
     if (typeof src[i] === 'string') {
       norm_src.push(`"${src[i]}"`);
     } else {
@@ -22,7 +22,7 @@ function checkSrc(src, callback) {
 }
 
 module.exports = function(src, dest, opts, callback) {
-  var defaultOpts = {
+  const defaultOpts = {
     maxBuffer: 1024 * 500, // 500kb
     maxHeap: '' // for setting JVM heap limits
   };
@@ -38,16 +38,16 @@ module.exports = function(src, dest, opts, callback) {
     opts = defaultOpts;
   }
 
-  var dirPathArr = __dirname.split(path.sep);
+  const dirPathArr = __dirname.split(path.sep);
 
   dirPathArr.pop();
   dirPathArr.pop();
   dirPathArr.push('jar');
   dirPathArr.push('pdfbox.jar');
 
-  var jarPath = dirPathArr.join(path.sep);
+  const jarPath = dirPathArr.join(path.sep);
 
-  var command = [
+  let command = [
     `java -jar ${
       opts.maxHeap ? '-Xmx' + opts.maxHeap : ''
     } "${jarPath}" PDFMerger`
@@ -64,7 +64,7 @@ module.exports = function(src, dest, opts, callback) {
 
     delete opts.maxHeap;
 
-    var child = exec(command.join(' '), opts, function(err, stdout, stderr) {
+    const child = exec(command.join(' '), opts, function(err, stdout, stderr) {
       if (err) {
         return callback(err);
       }
