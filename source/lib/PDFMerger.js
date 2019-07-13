@@ -21,7 +21,7 @@ function checkSrc(src, callback) {
   callback(null, norm_src);
 }
 
-module.exports = function(src, dest, opts, callback) {
+module.exports = function (src, dest, opts, callback) {
   const defaultOpts = {
     maxBuffer: 1024 * 500, // 500kb
     maxHeap: '' // for setting JVM heap limits
@@ -49,11 +49,11 @@ module.exports = function(src, dest, opts, callback) {
 
   let command = [
     `java -jar ${
-      opts.maxHeap ? '-Xmx' + opts.maxHeap : ''
+    opts.maxHeap ? '-Xmx' + opts.maxHeap : ''
     } "${jarPath}" PDFMerger`
   ];
 
-  checkSrc(src, function(err, norm_src) {
+  checkSrc(src, function (err, norm_src) {
     if (err) {
       return callback(err);
     }
@@ -64,7 +64,7 @@ module.exports = function(src, dest, opts, callback) {
 
     delete opts.maxHeap;
 
-    const child = exec(command.join(' '), opts, function(err, stdout, stderr) {
+    const child = exec(command.join(' '), opts, function (err, stdout, stderr) {
       if (err) {
         return callback(err);
       }
@@ -72,7 +72,7 @@ module.exports = function(src, dest, opts, callback) {
       callback(null);
     });
 
-    child.on('error', function(err) {
+    child.on('error', function (err) {
       return callback(`Execution problem. ${err}`);
     });
   });
