@@ -1,8 +1,14 @@
-## easy-pdf-merge
+## easy-pdf-merge [![Patreon][patreon-badge]][patreon-link] [![Paypal][paypal-badge]][paypal-link]
 
-easy-pdf-merge is a node module to merge multiple PDFs into a single PDF easily. This module uses [Apache PDFBox Library 2.0.1](http://pdfbox.apache.org). No special softwares are required for the module to run. But Java 6 or higher must be present.
+[patreon-badge]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2Fkaruppiah7890&style=flat-square
+[patreon-link]: https://patreon.com/karuppiah7890
 
-This project is currently maintained! Contributions through PRs are welcome. I will try to add a contributing guide. If you benefit from this project, buy the original author a cup of coffee by donating through [Paypal](https://www.paypal.me/karuppiah7890/10)
+[paypal-badge]: https://img.shields.io/badge/Paypal-Donate!-%2300457C.svg?logo=paypal&style=flat-square
+[paypal-link]: https://paypal.me/karuppiah7890
+
+easy-pdf-merge is a node module to merge multiple PDFs into a single PDF easily. This module uses [Apache PDFBox Library 2.0.16](http://pdfbox.apache.org). No special softwares are required for the module to run. But Java 6 or higher must be present.
+
+This project is currently maintained! Contributions through PRs are welcome. I will try to add a contributing guide. If you benefit from this project, buy the original author a cup of coffee by donating through [Paypal](https://www.paypal.me/karuppiah7890)
 
 Currently only callback style is supported. That is only Async functions are supported.
 
@@ -15,15 +21,13 @@ $ npm install --save easy-pdf-merge
 ## Usage :
 
 ```
-var merge = require('easy-pdf-merge');
+const merge = require('easy-pdf-merge');
 
 merge(source_files,dest_file_path,function(err){
-
-        if(err)
-        return console.log(err);
-
-        console.log('Success');
-
+  if(err) {
+    return console.log(err)
+  }
+  console.log('Success')
 });
 
 ```
@@ -37,25 +41,21 @@ For all files, it is recommended to give absolute paths to avoid possible path b
 
 ### Using relative file paths
 ```
-merge(['File One.pdf','File Two.pdf'],'File Ouput.pdf',function(err){
-
-        if(err)
-        return console.log(err);
-
-        console.log('Successfully merged!');
-
+merge(['File One.pdf', 'File Two.pdf'], 'File Ouput.pdf', function(err){
+  if(err) {
+    return console.log(err)
+  }
+  console.log('Successfully merged!')
 });
 ```
 
 ### Using absolute file paths
 ```
-merge(['/home/karuppiah/File One.pdf','/home/karuppiah/File Two.pdf'],'/home/karuppiah/Desktop/File Ouput.pdf',function(err){
-
-        if(err)
-        return console.log(err);
-
-        console.log('Successfully merged!');
-
+merge(['/home/karuppiah/File One.pdf', '/home/karuppiah/File Two.pdf'], '/home/karuppiah/Desktop/File Ouput.pdf', function(err) {
+  if(err) {
+    return console.log(err)
+  }
+  console.log('Successfully merged!')
 });
 ```
 
