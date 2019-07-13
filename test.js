@@ -1,10 +1,10 @@
 var path = require('path');
 var merge = require(`./source/index.js`);
 
-merge([`test${path.sep}github cheat sheet.pdf`,`test${path.sep}text_extraction.pdf`],`test${path.sep}Out.pdf`,function(err){
+merge([`test${path.sep}github cheat sheet.pdf`, `test${path.sep}text_extraction.pdf`], `test${path.sep}Out.pdf`, function (err) {
 
-          if(err)
-          return console.log(err);
+  if (err)
+    return console.log(err);
 
-          console.log("Success");
+  console.log("Success");
 });
