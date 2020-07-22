@@ -37,9 +37,9 @@
   },
   "homepage": "https://github.com/karuppiah7890/easy-pdf-merge#readme",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5"
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4"
   },
   "dependencies": {}
 }
