@@ -1,6 +1,6 @@
 {
   "name": "easy-pdf-merge",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A node module to merge PDFs. Uses Apache PDFBox library.",
   "main": "./distribution/index.js",
   "engines": {
