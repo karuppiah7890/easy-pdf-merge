@@ -64,10 +64,6 @@ merge(['/home/karuppiah/File One.pdf', '/home/karuppiah/File Two.pdf'], '/home/k
 
 [PDF Merger](https://github.com/karuppiah7890/pdf-merger-app) is a cross platform Desktop App being developed using [Electron Framework](http://electron.atom.io) and [easy-pdf-merge module](https://www.npmjs.com/package/easy-pdf-merge). You can find the source code of the App [here](https://github.com/karuppiah7890/pdf-merger-app).
 
-## Coming Soon :
-  1. Module will check if source files exist and return appropriate error.
-  2. Merge PDFs showing the progess percentage - useful while there are lots of PDFs to be merged. But this feature would mean that - callback will be called more than once. But there will be status codes to ensure the end of calling callbacks.
-
 ## Reporting Issues and Feature Requests
 
 For reporting issues and for feature requests, go to the [github issues page of the module](https://github.com/karuppiah7890/easy-pdf-merge/issues)
