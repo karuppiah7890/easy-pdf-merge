@@ -60,6 +60,41 @@ merge(['/home/karuppiah/File One.pdf', '/home/karuppiah/File Two.pdf'], '/home/k
 });
 ```
 
+### Options
+
+You can pass options to the `merge` function, like this
+
+```javascript
+const opts = {
+    maxBuffer: 1024 * 500, // 500kb
+    maxHeap: '2g' // for setting JVM heap limits to 2GB
+};
+
+merge(['File One.pdf', 'File Two.pdf'], 'File Ouput.pdf', opts, function (err) {
+    if (err) {
+        return console.log(err)
+    }
+    console.log('Successfully merged!')
+});
+```
+
+The default options is this
+
+```javascript
+const defaultOpts = {
+    maxBuffer: 1024 * 500, // 500kb
+    maxHeap: '' // for setting JVM heap limits
+};
+```
+
+`maxBuffer` - option passed to childprocess invoked by library to run pdfbox.jar java
+software. Refer [here](https://nodejs.org/api/child_process.html#child_process_maxbuffer_and_unicode)
+for docs
+
+`maxHeap` - To pass value to `-Xmx` Java option, for maximum memory allocation.
+Check [this stackoverflow answer](https://stackoverflow.com/questions/14763079/what-are-the-xms-and-xmx-parameters-when-starting-jvm)
+for some details
+
 ## An App based on easy-pdf-merge!
 
 [PDF Merger](https://github.com/karuppiah7890/pdf-merger-app) is a cross platform Desktop App being developed using [Electron Framework](http://electron.atom.io) and [easy-pdf-merge module](https://www.npmjs.com/package/easy-pdf-merge). You can find the source code of the App [here](https://github.com/karuppiah7890/pdf-merger-app).
