@@ -20,16 +20,15 @@ $ npm install --save easy-pdf-merge
 
 ## Usage :
 
-```
+```javascript
 const merge = require('easy-pdf-merge');
 
-merge(source_files,dest_file_path,function(err){
-  if(err) {
-    return console.log(err)
-  }
-  console.log('Success')
+merge(source_files, dest_file_path, function (err) {
+    if (err) {
+        return console.log(err)
+    }
+    console.log('Success')
 });
-
 ```
 
 source_files must be an array of file paths, with two or more file paths, or the module throws an error accordingly.
@@ -40,22 +39,24 @@ For all files, it is recommended to give absolute paths to avoid possible path b
 ## Example
 
 ### Using relative file paths
-```
-merge(['File One.pdf', 'File Two.pdf'], 'File Ouput.pdf', function(err){
-  if(err) {
-    return console.log(err)
-  }
-  console.log('Successfully merged!')
+
+```javascript
+merge(['File One.pdf', 'File Two.pdf'], 'File Ouput.pdf', function (err) {
+    if (err) {
+        return console.log(err)
+    }
+    console.log('Successfully merged!')
 });
 ```
 
 ### Using absolute file paths
-```
-merge(['/home/karuppiah/File One.pdf', '/home/karuppiah/File Two.pdf'], '/home/karuppiah/Desktop/File Ouput.pdf', function(err) {
-  if(err) {
-    return console.log(err)
-  }
-  console.log('Successfully merged!')
+
+```javascript
+merge(['/home/karuppiah/File One.pdf', '/home/karuppiah/File Two.pdf'], '/home/karuppiah/Desktop/File Ouput.pdf', function (err) {
+    if (err) {
+        return console.log(err)
+    }
+    console.log('Successfully merged!')
 });
 ```
 
