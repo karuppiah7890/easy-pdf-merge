@@ -62,7 +62,7 @@ merge(['/home/karuppiah/File One.pdf', '/home/karuppiah/File Two.pdf'], '/home/k
 
 ### Options
 
-You can pass options to the `merge` function, like this
+You can pass some options to the `merge` function, like this
 
 ```javascript
 const opts = {
