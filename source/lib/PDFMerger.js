@@ -1,5 +1,6 @@
 const exec = require('child_process').exec;
 const path = require('path');
+const fs = require('fs');
 
 function checkSrc(src, callback) {
   if (!Array.isArray(src)) {
@@ -12,7 +13,11 @@ function checkSrc(src, callback) {
 
   for (let i = 0; i < src.length; i++) {
     if (typeof src[i] === 'string') {
-      norm_src.push(`"${src[i]}"`);
+      if (fs.existsSync(src[i])) {
+        norm_src.push(`"${src[i]}"`);
+      } else {
+        return callback(`File "${src[i]}" does not exist`);
+      }
     } else {
       return callback(`Source : ${src[i]} + , is not a file name`);
     }
