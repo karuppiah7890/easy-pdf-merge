@@ -6,7 +6,7 @@
 [paypal-badge]: https://img.shields.io/badge/Paypal-Donate!-%2300457C.svg?logo=paypal&style=flat-square
 [paypal-link]: https://paypal.me/karuppiah7890
 
-easy-pdf-merge is a node module to merge multiple PDFs into a single PDF easily. This module uses [Apache PDFBox Library 2.0.16](http://pdfbox.apache.org). No special softwares are required for the module to run. But Java 6 or higher must be present.
+easy-pdf-merge is a node module to merge multiple PDFs into a single PDF easily. This module uses [Apache PDFBox Library 2.0.21](http://pdfbox.apache.org). No special softwares are required for the module to run. But Java 6 or higher must be present.
 
 This project is currently maintained! Contributions through PRs are welcome. I will try to add a contributing guide. If you benefit from this project, buy the original author a cup of coffee by donating through [Paypal](https://www.paypal.me/karuppiah7890)
 
