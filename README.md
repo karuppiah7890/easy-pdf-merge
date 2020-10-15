@@ -12,6 +12,8 @@ This project is currently maintained! Contributions through PRs are welcome. I w
 
 Currently only callback style is supported. That is only Async functions are supported.
 
+> ⚠️ Warning: This module was written as a side project. If you are using this in production for some criticial application, do consider checking out the code - it is a very very small module. 
+
 ## Install :
 
 ```
