@@ -53,10 +53,13 @@ module.exports = function (src, dest, opts, callback) {
   const jarPath = dirPathArr.join(path.sep);
 
   let command = [
-    `java -jar ${
-    opts.maxHeap ? '-Xmx' + opts.maxHeap : ''
-    } "${jarPath}" PDFMerger`
+    "java", "-jar", jarPath, "PDFMerger"
   ];
+
+  let maxHeapOpt = opts.maxHeap ? '-Xmx' + opts.maxHeap : null
+  if (maxHeapOpt) {
+    command.splice(2, 0, maxHeapOpt)
+  }
 
   checkSrc(src, function (err, norm_src) {
     if (err) {
