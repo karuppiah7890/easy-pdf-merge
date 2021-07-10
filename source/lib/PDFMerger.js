@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+const exec = require('child_process').execFile;
 const path = require('path');
 const fs = require('fs');
 
@@ -71,8 +71,8 @@ module.exports = function (src, dest, opts, callback) {
     command.push(`"${dest}"`);
 
     delete opts.maxHeap;
-
-    const child = exec(command.join(' '), opts, function (err, stdout, stderr) {
+    command = command.join(' ').split(' ');
+    const child = exec(command[0], command.slice(1), opts, function (err, stdout, stderr) {
       if (err) {
         return callback(err);
       }
