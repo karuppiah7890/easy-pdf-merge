@@ -1,5 +1,7 @@
 ## easy-pdf-merge [![Patreon][patreon-badge]][patreon-link] [![Paypal][paypal-badge]][paypal-link]
 
+# ⚠️ CURRENTLY NOT MAINTAINED
+
 [patreon-badge]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2Fkaruppiah7890&style=flat-square
 [patreon-link]: https://patreon.com/karuppiah7890
 
@@ -12,7 +14,7 @@ This project is currently maintained! Contributions through PRs are welcome. I w
 
 Currently only callback style is supported. That is only Async functions are supported.
 
-> ⚠️ Warning: This module was written as a side project. If you are using this in production for some criticial application, do consider checking out the code - it is a very very small module. 
+> ⚠️ Warning: This module was written as a side project. I don't maintain it anymore. If you are using this in production for some criticial application, do consider checking out the code - it is a very very small module.
 
 ## Install :
 
