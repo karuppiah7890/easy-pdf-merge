@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+const execFile = require('child_process').execFile;
 const path = require('path');
 const fs = require('fs');
 
@@ -14,7 +14,8 @@ function checkSrc(src, callback) {
   for (let i = 0; i < src.length; i++) {
     if (typeof src[i] === 'string') {
       if (fs.existsSync(src[i])) {
-        norm_src.push(`"${src[i]}"`);
+        // Passed to execFile as a literal argv element - no shell, no quoting needed.
+        norm_src.push(src[i]);
       } else {
         return callback(`File "${src[i]}" does not exist`);
       }
@@ -52,13 +53,15 @@ module.exports = function (src, dest, opts, callback) {
 
   const jarPath = dirPathArr.join(path.sep);
 
-  let command = [
-    "java", "-jar", jarPath, "PDFMerger"
+  // Argument vector for execFile. The binary is invoked directly, so no shell
+  // metacharacter in a path can be interpreted.
+  let args = [
+    "-jar", jarPath, "PDFMerger"
   ];
 
   let maxHeapOpt = opts.maxHeap ? '-Xmx' + opts.maxHeap : null
   if (maxHeapOpt) {
-    command.splice(2, 0, maxHeapOpt)
+    args.splice(1, 0, maxHeapOpt)
   }
 
   checkSrc(src, function (err, norm_src) {
@@ -66,13 +69,13 @@ module.exports = function (src, dest, opts, callback) {
       return callback(err);
     }
 
-    command = command.concat(norm_src);
+    args = args.concat(norm_src);
 
-    command.push(`"${dest}"`);
+    args.push(dest);
 
     delete opts.maxHeap;
 
-    const child = exec(command.join(' '), opts, function (err, stdout, stderr) {
+    const child = execFile("java", args, opts, function (err, stdout, stderr) {
       if (err) {
         return callback(err);
       }
